@@ -31,16 +31,16 @@ public class CalculadoraIMC {
 		if (sexo.equals("F")) {
 			System.out.println("Está grávida? | S para SIM | N para NÃO");
 			gravida = ler.next().toUpperCase();
-			if(gravida.equals("S")) {
+			if (gravida.equals("S")) {
 				gravidaBoolean = true;
 			}
 		}
 
 		// calculo do IMC
 		resultadoIMC = (peso) / (altura * altura);
-		
+
 		// Caso esteja grávida, os cálculos abaixos serão realizados.
-		if (gravidaBoolean = true && sexo.equals("F") ) {
+		if (gravidaBoolean = true && sexo.equals("F")) {
 			if (resultadoIMC < 18.5) {
 				System.out.println("Seu IMC é: " + resultadoIMC);
 				System.out.println(
@@ -60,7 +60,8 @@ public class CalculadoraIMC {
 			}
 		}
 
-		if ((idade >= 18 && idade < 65) && (gravidaBoolean = false )) {
+		// Calculo para adultos, exceto grávidas
+		if ((idade >= 18 && idade < 65) && (!gravidaBoolean)) {
 
 			if (resultadoIMC < 16) {
 				System.out.println("Seu IMC é: " + resultadoIMC);
@@ -89,6 +90,54 @@ public class CalculadoraIMC {
 			}
 		}
 
+		// Calculo para crianças
+		if (idade < 18 && sexo.equals("M")) {
+			if (resultadoIMC < 21.9) {
+
+				System.out.println("Seu IMC é: " + resultadoIMC);
+				System.out.println("Baixo peso = abaixo de 21,9 kg/m².");
+			} else if (resultadoIMC >= 22 && resultadoIMC <= 27) {
+				System.out.println("Seu IMC é: " + resultadoIMC);
+				System.out.println("Peso normal = entre 22 e 27 kg/m².");
+			} else if (resultadoIMC >= 27.1 && resultadoIMC <= 32) {
+				System.out.println("Seu IMC é: " + resultadoIMC);
+				System.out.println("Sobrepeso = entre 27,1 e 32 kg/m²");
+			} else if (resultadoIMC >= 32.1 && resultadoIMC <= 37) {
+				System.out.println("Seu IMC é: " + resultadoIMC);
+				System.out.println("Obesidade grau I =  entre 32,1 e 37 kg/m².");
+			} else if (resultadoIMC >= 37.1 && resultadoIMC <= 41.9) {
+				System.out.println("Seu IMC é: " + resultadoIMC);
+				System.out.println("Obesidade grau II = entre 37,1 e 41,9 kg/m²");
+			} else if (resultadoIMC >= 42) {
+				System.out.println("Seu IMC é: " + resultadoIMC);
+				System.out.println("Obesidade grau III (obesidade mórbida) = maior que 42 kg/m².");
+			}
+		}
+		
+		if (idade < 18) {
+			if (resultadoIMC < 21.9) {
+
+				System.out.println("Seu IMC é: " + resultadoIMC);
+				System.out.println("Baixo peso = abaixo de 21,9 kg/m².");
+			} else if (resultadoIMC >= 22 && resultadoIMC <= 27) {
+				System.out.println("Seu IMC é: " + resultadoIMC);
+				System.out.println("Peso normal = entre 22 e 27 kg/m².");
+			} else if (resultadoIMC >= 27.1 && resultadoIMC <= 32) {
+				System.out.println("Seu IMC é: " + resultadoIMC);
+				System.out.println("Sobrepeso = entre 27,1 e 32 kg/m²");
+			} else if (resultadoIMC >= 32.1 && resultadoIMC <= 37) {
+				System.out.println("Seu IMC é: " + resultadoIMC);
+				System.out.println("Obesidade grau I =  entre 32,1 e 37 kg/m².");
+			} else if (resultadoIMC >= 37.1 && resultadoIMC <= 41.9) {
+				System.out.println("Seu IMC é: " + resultadoIMC);
+				System.out.println("Obesidade grau II = entre 37,1 e 41,9 kg/m²");
+			} else if (resultadoIMC >= 42) {
+				System.out.println("Seu IMC é: " + resultadoIMC);
+				System.out.println("Obesidade grau III (obesidade mórbida) = maior que 42 kg/m².");
+			}
+		}
+
+		// Calculo para idoso do sexo feminino e masculino
 		if (idade >= 65 && sexo.equals("F")) {
 			if (resultadoIMC < 21.9) {
 				System.out.println("Seu IMC é: " + resultadoIMC);
