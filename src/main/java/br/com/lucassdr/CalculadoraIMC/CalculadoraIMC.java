@@ -16,7 +16,6 @@ public class CalculadoraIMC {
 		boolean gravidaBoolean;
 		Scanner ler = new Scanner(System.in);
 
-		// TODO leitura da idade
 		System.out.println("Digite a idade");
 		idade = ler.nextInt();
 
