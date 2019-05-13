@@ -12,7 +12,7 @@ public class CalculadoraIMC {
 		float peso;
 		float resultadoIMC;
 		int idade;
-		boolean gravidaBoolean;
+		boolean gravidaBoolean = false;
 		String sexo;
 		String gravida = null;
 		Scanner ler = new Scanner(System.in);
@@ -42,7 +42,9 @@ public class CalculadoraIMC {
 		resultadoIMC = (peso) / (altura * altura);
 
 		// Caso esteja grávida, os cálculos abaixos serão realizados.
-		if (gravidaBoolean = true && sexo.equals("F")) {
+		if (gravidaBoolean == true && sexo.equals("F")) {
+			System.out.println("==============================");
+			System.out.println("Resultado para grávidas \n");
 			if (resultadoIMC < 18.5) {
 				System.out.println("Seu IMC é: " + df.format(resultadoIMC));
 				System.out.println(
@@ -64,7 +66,8 @@ public class CalculadoraIMC {
 
 		// Calculo para adultos, exceto grávidas
 		if ((idade >= 18 && idade < 65) && (!gravidaBoolean)) {
-
+			System.out.println("==============================");
+			System.out.println("Resultado para adultos \n");
 			if (resultadoIMC < 16) {
 				System.out.println("Seu IMC é: " + df.format(resultadoIMC));
 				System.out.println("Baixo peso muito grave = abaixo de 16 kg/m².");
@@ -144,6 +147,8 @@ public class CalculadoraIMC {
 
 		// Calculo para idoso do sexo feminino e masculino
 		if (idade >= 65 && sexo.equals("F")) {
+			System.out.println("==============================");
+			System.out.println("Resultado para idosos - Feminino \n");
 			if (resultadoIMC < 21.9) {
 				System.out.println("Seu IMC é: " + df.format(resultadoIMC));
 				System.out.println("Baixo peso = abaixo de 21,9 kg/m².");
@@ -165,6 +170,8 @@ public class CalculadoraIMC {
 			}
 
 		} else if (idade >= 65 && sexo.equals("M")) {
+			System.out.println("==============================");
+			System.out.println("Resultado para idosos - Masculino \n");
 			if (resultadoIMC < 21.9) {
 				System.out.println("Seu IMC é: " + df.format(resultadoIMC));
 				System.out.println("Baixo peso = abaixo de 21,9 kg/m².");
